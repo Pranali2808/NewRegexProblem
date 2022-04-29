@@ -9,7 +9,6 @@ namespace NewUserRegistrationProblem
 {
     public class RegexValidate
     {
-
         public static string Regex_FirstName = "^[A-Z]{1}[a-z]{2,}$";
         public static string Regex_LastName = "^[A-Z]{1}[a-z]{2,}$";
         public static string Regex_Email = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
@@ -28,30 +27,12 @@ namespace NewUserRegistrationProblem
             "abc@gmail.com.com",
             "abc+100@gmail.com"
         };
-        public bool ValidateFirstName(string first)
-        {
-            return Regex.IsMatch(first, Regex_FirstName);
-        }
-        public bool ValidateLastName(string last)
-        {
-            return Regex.IsMatch(last, Regex_LastName);
-        }
-        public bool ValidateEmail(string emailId)
-        {
-            return Regex.IsMatch(emailId, Regex_Email);
-        }
-        public bool ValidateMobileNo(string mobileNo)
-        {
-            return Regex.IsMatch(mobileNo, Regex_MobileNo);
-        }
-        public bool ValidatePassword(string password)
-        {
-            return Regex.IsMatch(password, Regex_Password);
-        }
-        public bool ValidateEmailSamples(string emailId)
-        {
-            return Regex.IsMatch(emailId, Regex_EmailAll);
-        }
+        public bool ValidateFirstName(string first) => (Regex.IsMatch(first, Regex_FirstName));
+        public bool ValidateLastName(string last) => (Regex.IsMatch(last, Regex_LastName));
+        public bool ValidateEmail(string emailId) => (Regex.IsMatch(emailId, Regex_Email));
+        public bool ValidateMobileNo(string mobileNo) => (Regex.IsMatch(mobileNo, Regex_MobileNo));
+        public bool ValidatePassword(string password) => (Regex.IsMatch(password, Regex_Password));
+        public bool ValidateEmailSamples(string emailId) => (Regex.IsMatch(emailId, Regex_EmailAll));
         public List<string> GetList()
         {
             return sampleEmails;
@@ -69,3 +50,9 @@ namespace NewUserRegistrationProblem
         }
     }
 }
+
+
+
+    
+
+
