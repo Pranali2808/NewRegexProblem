@@ -15,6 +15,19 @@ namespace NewUserRegistrationProblem
         public static string Regex_Email = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
         public static string Regex_MobileNo = "^[1-9]{1}[0-9]{1,2}[ ][1-9]{1}[0-9]{9}$";
         public static string Regex_Password = "^(?=.*[0-9])(?=.*[A-Z])(?=[^!@#$%&*+-.]*[!@#$%&*+-.][^!@#$%&*+-.]*$)[\\S]{8,}$";
+        private static string Regex_EmailAll = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$";
+        public List<string> sampleEmails = new List<string>()
+        {
+            "abc@yahoo.com",
+            "abc-100@yahoo.com",
+            "abc.100@yahoo.com",
+            "abc111@abc.com",
+            "abc-100@abc.net",
+            "abc.100@abc.com.au",
+            "abc@1.com",
+            "abc@gmail.com.com",
+            "abc+100@gmail.com"
+        };
         public bool ValidateFirstName(string first)
         {
             return Regex.IsMatch(first, Regex_FirstName);
@@ -34,6 +47,14 @@ namespace NewUserRegistrationProblem
         public bool ValidatePassword(string password)
         {
             return Regex.IsMatch(password, Regex_Password);
+        }
+        public bool ValidateEmailSamples(string emailId)
+        {
+            return Regex.IsMatch(emailId, Regex_EmailAll);
+        }
+        public List<string> GetList()
+        {
+            return sampleEmails;
         }
         public void PrintResult(bool result)
         {
