@@ -28,6 +28,10 @@ namespace NewUserRegistrationProblem
             string mobileNo = Console.ReadLine();
             bool mobileResult = validateUser.ValidateMobileNo(mobileNo);
             validateUser.PrintResult(mobileResult);
+            Console.WriteLine("Enter your password: ");
+            string password = Console.ReadLine();
+            bool passwordResult = validateUser.ValidatePassword(password);
+            validateUser.PrintResult(passwordResult);
             Console.ReadLine();
         }
     }
