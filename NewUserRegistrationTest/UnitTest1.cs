@@ -10,58 +10,91 @@ namespace NewUserRegistrationTest
         [TestMethod]
         public void FistNameTest()
         {
-            //Arrange
-            RegexValidate user = new RegexValidate();
-            string firstName = "Pranali";
-            //Act
-            bool result = user.ValidateFirstName(firstName);
-            //Assert
-            Assert.IsTrue(result);
+            try
+            {
+                //Arrange
+                RegexValidate user = new RegexValidate();
+                string firstName = "Pranali";
+                //Act
+                bool result = user.ValidateFirstName(firstName);
+            }
+            catch (InvalidUserDetailsCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Invalid password.", e.Message);
+            }
         }
+
         [TestMethod]
         public void LastNameTest()
         {
-            //Arrange
-            RegexValidate user = new RegexValidate();
-            string lastName = "Rane";
-            //Act
-            bool result = user.ValidateLastName(lastName);
-            //Assert
-            Assert.IsTrue(result);
+            try
+            {
+                //Arrange
+                RegexValidate user = new RegexValidate();
+                string lastName = "Rane";
+                //Act
+                bool result = user.ValidateLastName(lastName);
+            }
+            catch (InvalidUserDetailsCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Invalid password.", e.Message);
+            }
         }
+
         [TestMethod]
         public void EmailIdTest()
         {
-            //Arrange
-            RegexValidate user = new RegexValidate();
-            string email = "ranepranali1997@gmail.com";
-            //Act
-            bool result = user.ValidateEmail(email);
-            //Assert
-            Assert.IsTrue(result);
+            try
+            {
+                //Arrange
+                RegexValidate user = new RegexValidate();
+                string email = "ranepranali1997@gmail.com";
+                //Act
+                bool result = user.ValidateEmail(email);
+            }
+            catch (InvalidUserDetailsCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Invalid password.", e.Message);
+            }
         }
+
         [TestMethod]
         public void MobileNumberTest()
         {
-            //Arrange
-            RegexValidate user = new RegexValidate();
-            string mobileNumber = "91 9130679234";
-            //Act
-            bool result = user.ValidateMobileNo(mobileNumber);
-            //Assert
-            Assert.IsTrue(result);
+            try
+            {
+                //Arrange
+                RegexValidate user = new RegexValidate();
+                string mobileNumber = "91 9130679234";
+                //Act
+                bool result = user.ValidateMobileNo(mobileNumber);
+            }
+            catch (InvalidUserDetailsCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Invalid password.", e.Message);
+            }
         }
+
         [TestMethod]
         public void PasswordTest()
         {
-            //Arrange
-            RegexValidate user = new RegexValidate();
-            string password = "Pranali@123";
-            //Act
-            bool result = user.ValidatePassword(password);
-            //Assert
-            Assert.IsTrue(result);
-
+            try
+            {
+                //Arrange
+                RegexValidate user = new RegexValidate();
+                string password = "Pranali@123";
+                //Act
+                bool result = user.ValidatePassword(password);
+            }
+            catch (InvalidUserDetailsCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Invalid password.", e.Message);
+            }
         }
         [TestMethod]
         [DataRow("abc@yahoo.com")]
@@ -84,3 +117,4 @@ namespace NewUserRegistrationTest
         }
     }
 }
+
