@@ -20,6 +20,10 @@ namespace NewUserRegistrationProblem
             string lastName = Console.ReadLine();
             bool lNameResult = validateUser.ValidateLastName(lastName);
             validateUser.PrintResult(lNameResult);
+            Console.WriteLine("Enter your email id: ");
+            string eMailId = Console.ReadLine();
+            bool emailResult = validateUser.ValidateEmail(eMailId);
+            validateUser.PrintResult(emailResult);
             Console.ReadLine();
         }
     }
