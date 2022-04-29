@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NewUserRegistrationProblem
 {
-    class RegexValidate
+    public class RegexValidate
     {
 
         public static string Regex_FirstName = "^[A-Z]{1}[a-z]{2,}$";
